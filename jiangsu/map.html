@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSU--GIS1102 江苏方言地图</title>
+<script type="text/javascript" src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/lib/raphael-min.js"></script>
+<script type="text/javascript" src="js/res/jiangsuMapConfig.js"></script>
+<script type="text/javascript" src="js/res/jsMapConfig.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style11.css" />
+<script src="js/modernizr.custom.js"></script>
+
+<style type="text/css">
+/* base */
+html{background:#fff;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,textarea,select,button,th,td,div{margin:0; padding:0}button,input,select,textarea{font:12px/1.5 tahoma,Helvetica,arial,\5b8b\4f53}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}th{text-align:inherit}fieldset,img{border:0}iframe{display:block}ol,ul,li{list-style:none}del{text-decoration:line-through}ins,a{text-decoration:none}a:focus{outline:none}h1,h2,h3,h4,h5,h6{font-size:100%}.clear{clear:both}.clearfix:after{content:".";display:block;height:0;font-size:0;clear:both;visibility:hidden}.clearfix{zoom:1}
+/* base */
+
+body{font:12px/1.5 "Lucida Grande","Lucida Sans Unicode", Tahoma, SimSun,Helvetica,sans-serif; color:#2E313A;}
+.wrap{ width:900px; margin:0 auto; background:url(images/bg.png); border-left:1px solid #DDD; border-right:1px solid #DDD;}
+a{color:#0e4279; -moz-transition:color 0.3s ease 0s;}
+a:hover{color:#5B636A;}
+h1{ padding:20px 0 0 20px; font-size:24px; line-height:50px;} 
+h2{ margin-top:30px; padding-left:10px; background-color: #ddd; font-size:14px; line-height:30px;}
+
+
+/* 提示自定义 */
+.stateTip, #StateTip{display:none; position:absolute; padding:8px; background:#fff; border:2px solid #2385B1; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; font-size:12px; font-family:Tahoma; color:#333;}
+
+.mapInfo i{ display:inline-block; width:15px; height:15px; margin-top:5px; line-height:15px; font-style:normal; background:#aeaeae; color:#fff; font-size:11px; font-family: Tahoma; -webkit-border-radius:15px; border-radius:15px; text-align:center}
+.mapInfo i.active{background:#E27F21;}
+.mapInfo span{ padding:0 5px 0 3px;}
+.mapInfo b{ font-weight:normal; color:#2770B5}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$('#JiangsuMap').SVGMap({
+		mapName: 'jiangsu',
+		stateData: {
+		//南京A
+		"nanjing":{"value":"0.3","index":"1","stateInitColor":"7"},
+		"jiangning":{"value":"0.3","index":"2","stateInitColor":"7"},
+		"pukou":{"value":"0.3","index":"3","stateInitColor":"7"},
+		"lishui":{"value":"0.5","index":"4","stateInitColor":"5"},
+		"gaochun":{"value":"0.6","index":"5","stateInitColor":"4"},
+		"liuhe":{"value":"0.3","index":"6","stateInitColor":"7"},
+		//无锡B
+		"wuxi":{"value":"0.9","index":"7","stateInitColor":"1"},
+		"jiangyin":{"value":"0.8","index":"8","stateInitColor":"2"},
+		"yixing":{"value":"0.8","index":"9","stateInitColor":"2"},
+		"xishan":{"value":"0.9","index":"10","stateInitColor":"1"},
+		//徐州C
+		"xuzhou":{"value":"-1","index":"11","stateInitColor":"15"},
+		"fengxian":{"value":"-0.9","index":"12","stateInitColor":"14"},
+		"pizhou":{"value":"-1","index":"13","stateInitColor":"15"},
+		"peixian":{"value":"-1","index":"14","stateInitColor":"15"},
+		"tongshan":{"value":"-1","index":"15","stateInitColor":"15"},
+		"suining":{"value":"-0.8","index":"16","stateInitColor":"13"},
+		"xinyi":{"value":"-0.6","index":"17","stateInitColor":"12"},
+		//常州D
+		"changzhou":{"value":"0.8","index":"18","stateInitColor":"2"},
+		"wujin":{"value":"0.8","index":"19","stateInitColor":"2"},
+		"liyang":{"value":"0.6","index":"20","stateInitColor":"4"},
+		"jintan":{"value":"0.6","index":"21","stateInitColor":"4"},
+		//苏州E
+		"suzhou":{"value":"1","index":"22","stateInitColor":"0"},
+		"zhangjiagang":{"value":"0.9","index":"23","stateInitColor":"1"},
+		"kunshan":{"value":"1","index":"24","stateInitColor":"0"},
+		"taicang":{"value":"0.9","index":"25","stateInitColor":"1"},
+		"changshu":{"value":"0.9","index":"26","stateInitColor":"1"},
+		"wujiang":{"value":"0.9","index":"27","stateInitColor":"1"},
+		"wuxian":{"value":"1","index":"28","stateInitColor":"0"},
+		//南通F
+		"nantong":{"value":"0.6","index":"29","stateInitColor":"4"},
+		"tongzhou":{"value":"0.7","index":"30","stateInitColor":"3"},
+		"haimen":{"value":"0.8","index":"31","stateInitColor":"2"},
+		"qidong":{"value":"0.8","index":"32","stateInitColor":"2"},
+		"rugao":{"value":"0.5","index":"33","stateInitColor":"5"},
+		"haian":{"value":"0.4","index":"34","stateInitColor":"6"},
+		"rudong":{"value":"0.4","index":"35","stateInitColor":"6"},
+		//连云港G
+		"lianyungang":{"value":"0.1","index":"36","stateInitColor":"9"},
+		"ganyu":{"value":"-0.2","index":"37","stateInitColor":"11"},
+		"donghai":{"value":"-0.2","index":"38","stateInitColor":"11"},
+		"guanyun":{"value":"0.1","index":"39","stateInitColor":"9"},
+		"guannan":{"value":"0.1","index":"40","stateInitColor":"9"},
+		//淮安H
+		"huaian":{"value":"0.2","index":"41","stateInitColor":"8"},
+		"huaiyin":{"value":"0.2","index":"42","stateInitColor":"8"},
+		"lianshui":{"value":"0.1","index":"43","stateInitColor":"9"},
+		"xuyi":{"value":"0.3","index":"44","stateInitColor":"7"},
+		"hongze":{"value":"0.3","index":"45","stateInitColor":"7"},
+		"jinhu":{"value":"0.3","index":"46","stateInitColor":"7"},
+		"huaianqu":{"value":"0.2","index":"47","stateInitColor":"8"},
+		//盐城J
+		"yancheng":{"value":"0.3","index":"48","stateInitColor":"7"},
+		"xiangshui":{"value":"0.1","index":"49","stateInitColor":"9"},
+		"binghai":{"value":"0.1","index":"50","stateInitColor":"9"},
+		"funing":{"value":"0.1","index":"51","stateInitColor":"9"},
+		"jianhu":{"value":"0.2","index":"52","stateInitColor":"8"},
+		"dongtai":{"value":"0.4","index":"53","stateInitColor":"6"},
+		"dafeng":{"value":"0.3","index":"54","stateInitColor":"7"},
+		"sheyang":{"value":"0.2","index":"55","stateInitColor":"8"},
+		//扬州K
+		"yangzhou":{"value":"0.4","index":"56","stateInitColor":"6"},
+		"baoying":{"value":"0.3","index":"57","stateInitColor":"7"},
+		"hanjiang":{"value":"0.4","index":"58","stateInitColor":"6"},
+		"jiangdu":{"value":"0.4","index":"59","stateInitColor":"6"},
+		"gaoyou":{"value":"0.3","index":"60","stateInitColor":"7"},
+		"yizheng":{"value":"0.4","index":"61","stateInitColor":"6"},
+		//镇江L
+		"zhenjiang":{"value":"0.4","index":"62","stateInitColor":"6"},
+		"yangzhong":{"value":"0.5","index":"63","stateInitColor":"5"},
+		"jurong":{"value":"0.5","index":"64","stateInitColor":"5"},
+		"danyang":{"value":"0.6","index":"65","stateInitColor":"4"},
+		"dantu":{"value":"0.5","index":"66","stateInitColor":"5"},
+		//泰州M
+		"taizhou":{"value":"0.4","index":"67","stateInitColor":"6"},
+		"jiangyan":{"value":"0.4","index":"68","stateInitColor":"6"},
+		"taixing":{"value":"0.5","index":"69","stateInitColor":"5"},
+		"xinghua":{"value":"0.3","index":"70","stateInitColor":"7"},
+		"jingjiang":{"value":"0.7","index":"71","stateInitColor":"3"},
+		//宿迁N
+		"suqian":{"value":"-0.2","index":"72","stateInitColor":"11"},
+		"shuyang":{"value":"0","index":"73","stateInitColor":"10"},
+		"siyang":{"value":"0","index":"74","stateInitColor":"10"},
+		"sihong":{"value":"0","index":"75","stateInitColor":"10"}
+		},
+		dialect: function(value){
+			return (value<0)?"中原方言":((value>0.7)?"吴语":(value>0.3)?"吴淮混合":"江淮方言");
+		},
+		stateTipHtml: function(stateData, obj){
+            return '序号:' + ((stateData)[obj.id] && (stateData)[obj.id].index || obj.id) + '<br/>地名:' + obj.name+'<br/>方言:'+this.dialect((stateData)[obj.id].value);
+        },
+        clickCallback: function(stateData, obj){
+           alert("触发了"+obj.name+"的事件！");
+       	}
+	});
+
+	$('#JsMap').SVGMap({
+		mapName: 'js',
+		stateData: {
+		//南京A
+		"nanjing":{"value":"0.32","index":"1","stateInitColor":"7"},
+		//无锡B
+		"wuxi":{"value":"0.85","index":"2","stateInitColor":"1"},
+		//徐州C
+		"xuzhou":{"value":"-0.91","index":"3","stateInitColor":"15"},
+		//常州D
+		"changzhou":{"value":"0.72","index":"4","stateInitColor":"2"},
+		//苏州E
+		"suzhou":{"value":"0.96","index":"5","stateInitColor":"0"},
+		//南通F
+		"nantong":{"value":"0.58","index":"6","stateInitColor":"4"},
+		//连云港G
+		"lianyungang":{"value":"0.01","index":"7","stateInitColor":"9"},
+		//淮安H
+		"huaian":{"value":"0.20","index":"8","stateInitColor":"8"},
+		//盐城J
+		"yancheng":{"value":"0.21","index":"9","stateInitColor":"7"},
+		//扬州K
+		"yangzhou":{"value":"0.36","index":"10","stateInitColor":"6"},
+		//镇江L
+		"zhenjiang":{"value":"0.46","index":"11","stateInitColor":"5"},
+		//泰州M
+		"taizhou":{"value":"0.40","index":"12","stateInitColor":"6"},
+		//宿迁N
+		"suqian":{"value":"-0.04","index":"13","stateInitColor":"11"}
+		},
+		dialect: function(value){
+			return (value<0)?"中原方言":((value>0.7)?"吴语":(value>0.3)?"吴淮混合":"江淮方言");
+		},
+		stateTipHtml: function(stateData, obj){
+            return '序号:' + ((stateData)[obj.id] && (stateData)[obj.id].index || obj.id) + '<br/>地名:' + obj.name+'<br/>方言:'+this.dialect((stateData)[obj.id].value);
+        },
+        clickCallback: function(stateData, obj){
+           //alert("触发了"+obj.name+"的事件！");
+       	}
+
+	});
+
+	// $('#MapColor').show();
+});
+</script>
+</head>
+<body>
+	<div class="wrap">
+	    <div class="items" id="Item00">
+            <h2>县区级级别</h2>
+            <a href="javascript:;" class="fold"></a>
+            <div class="itemCon">
+            	<div id="JiangsuMap"></div>
+	        </div>
+	    </div>
+
+	    <div class="items" id="Item01">
+	        <h2>地级市级别</h2>
+	        <a href="javascript:;" class="fold"></a>
+            <div class="itemCon">
+	           <div id="JsMap"></div>
+	        </div>
+        </div>
+	</div>
+	<p><button id="trigger-overlay" type="button">Open Overlay</button></p>
+
+	<!-- open/close -->
+	<div class="overlay overlay-simplegenie">
+		<button type="button" class="overlay-close">Close</button>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Work</a></li>
+				<li><a href="#">Clients</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<script src="js/classie.js"></script>
+	<script src="js/demo1.js"></script>
+
+</body>
+</html>

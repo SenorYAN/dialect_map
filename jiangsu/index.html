@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>江浙沪皖方言地图 v2.0.2</title>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:url(img/bg.jpg);}
+</style>
+<link rel="stylesheet" href="css/lof-slider.css" media="all" />
+
+<script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/lof-slider.js"></script>
+<script type="text/javascript">
+$(document).ready(function($){
+
+	var buttons = {
+		previous:$('#home-slider .button-previous'),
+		next:$('#home-slider .button-next')
+	};	
+
+	$('#home-slider').lofJSidernews( {
+		interval 		: 4000,
+		direction		: 'opacitys',	
+		easing			: 'easeInOutExpo',
+		duration		: 1200,
+		auto		 	: false,
+		maxItemDisplay  : 5,
+		navPosition     : 'horizontal', // horizontal
+		navigatorHeight : 73,
+		navigatorWidth  : 188,
+		mainWidth		: 940,
+		buttons: buttons
+	});
+	
+	$(".sliders-wrapper li,.navigator-content").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+
+});
+</script>
+
+</head>
+<body>
+<div id="home-slider" class="lof-slidecontent">
+	<div class="preload"><div></div></div>
+	<ul class="sliders-wrap-inner">
+		<li>
+			<img src="images/dummies/slides/jiangzhehuwan.png" title alt="alt" />
+			<div class="slider-description">
+				<h4>总体分布</h4>
+				<p>江苏省是北方人眼中的南方，是南方人眼中的北方。这样一个南北交汇融合的地区创造了丰富的语言背景。大体为中原方言--江淮方言--吴方言，从西北到东南的阶梯分布。<a class="link" href="map2.html">进入主页</a></p>
+			</div>
+		</li>
+		<li>
+			<img src="images/dummies/slides/jiangsu.png" title alt="alt" />
+			<div class="slider-description">
+				<h4>江淮方言</h4>
+				<p>以南京，扬州，淮安为代表的方言带，是北方方言往南融合的结果，带有古代吴越语言的特征，分布于江苏中部。</p>
+			</div>
+		</li>
+		<li>
+			<img src="images/dummies/slides/zhejiang.png" title alt="alt" />
+			<div class="slider-description">
+				<h4>吴语</h4>
+				<p>以苏州，无锡为代表的方言带，是千古年来，吴国语言的流传。从春秋战国的吴到三国的孙吴还是后来的杨吴，是江苏南部的代表方言。同时广泛分布于浙江北部，上海全境。</p>
+			</div>
+		</li>
+		<li>
+			<img src="images/dummies/slides/shanghai.png" title alt="alt" />
+			<div class="slider-description">
+				<h4>中原官话</h4>
+				<p>以徐州为代表的方言带，似乎与南部方言格格不入，听起来山东腔十足，只分布于江苏的西北角。</p>
+			</div>
+		</li>
+		<li>
+			<img src="images/dummies/slides/anhui.png" title alt="alt" />
+			<div class="slider-description">
+				<h4>历史沿革</h4>
+				<p>悠悠历史，记录千百年来北淮南吴的发展与变迁。</p>
+			</div>
+		</li>
+
+	</ul>
+	
+	<div class="navigator-content">
+		<div class="navigator-wrapper">
+			<ul class="navigator-wrap-inner">
+				<li><img src="images/dummies/slides/jiangzhehuwan_s.png" alt="alt" /></li>
+				<li><img src="images/dummies/slides/jiangsu_s.png" alt="alt" /></li>
+				<li><img src="images/dummies/slides/zhejiang_s.png" alt="alt" /></li>
+				<li><img src="images/dummies/slides/shanghai_s.png" alt="alt" /></li>
+				<li><img src="images/dummies/slides/anhui_s.png" alt="alt" /></li>
+			</ul>
+		</div>
+		<div class="button-next">下一张</div>
+		<div class="button-previous">上一张</div>
+	</div>
+</div>
+
+
+</body>
+</html>

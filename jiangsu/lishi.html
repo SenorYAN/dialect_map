@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>江苏方言历史变迁</title>
+<meta name="description" content="A content navigation effect that reminds of jumping on a trampoline" />
+<meta name="keywords" content="svg, animation, trampoline, effect, images, navigation" />
+
+<!--公共样式-->
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/vicons-font.css" />
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+<script type="text/javascript" src="js/snap.svg-min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+<body class="demo-2">
+
+<div id="morph-shape" class="morph-shape" data-morph-next="M301,301c0,0-83.8-21-151-21C71.8,280-1,301-1,301s21-65.7,21-151C20,79.936-1-1-1-1s73,11,151,11c85,0,151-11,151-11
+s-21,66.43-21,151C280,229.646,301,301,301,301z">
+	<svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="none">
+		<path d="M301,301c0,0-83.8,0-151,0c-78.2,0-151,0-151,0s0-65.7,0-151C-1,79.936-1-1-1-1s73,0,151,0c85,0,151,0,151,0s0,66.43,0,151
+C301,229.646,301,301,301,301z" />
+	</svg>
+</div>
+
+<div class="main">
+	<div class="container">
+	
+		<header class="codrops-header">
+			
+		</header>
+		
+		<div class="stack">
+			<ul id="elasticstack" class="stack__images">
+				<li><img src="images/1.jpg" alt="01"/></li>
+				<li><img src="images/2.jpg" alt="02"/></li>
+				<li><img src="images/3.jpg" alt="03"/></li>
+				<li><img src="images/4.jpg" alt="04"/></li>
+				<li><img src="images/5.jpg" alt="05"/></li>
+				<li><img src="images/6.jpg" alt="06"/></li>
+			</ul>
+			<button id="stack-next" class="stack__next"><i class="icon icon-down"></i><span>Next</span></button>
+			<ul id="stack-titles" class="stack__titles">
+				<li class="current"> 
+					<blockquote>
+					  <p>"春秋"</p>
+					  <footer><a href="">春秋时期，江苏北部由鲁国、徐国、楚国分治，操中原口音。中部南部为吴国所治，古吴语起源于此。</a> </footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>"三国"</p>
+					  <footer><a href="">三国时期，北部为魏国，小沛、下邳一代遭到北方渗入，淮语开始产生。南部为吴国，江都、吴县吴语发育良好，开始向南越、山越一代扩散。孙权派船队前往琉球、瀛洲，产生吴闽混合语，一说日语的根源也与此。</a></footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>"南北朝"</p>
+					  <footer><a href="">北部一直被魏齐控制，南部为南朝宋齐梁陈，此时的建业（今南京）仍然为吴语的核心地区。</a> </footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>"宋"</p>
+					  <footer><a href="">宋朝的南退导致江苏中北部，大多数地区沦为北人控制，吴语在长江以北大大的后退，大致，只剩下江都（今扬州），海陵（今泰州、南通北部）一带。</a></footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>"元"</p>
+					  <footer><a href="">元朝大军南侵，南宋退居临安（今杭州），把中原地区汴京一带口音带入，杭州一带吴语出现了交汇融合，南宋败退福建、两广之后，南京一带吴语开始东退，扬州的吴语开始萎靡。</a></footer>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote>
+					  <p>"明清"</p>
+					  <footer><a href="">明朝江南省建立，南直隶包括了江苏、安徽两省，首都大量北人涌入，南京地区吴语全线崩溃，从而导致了如今南京市区内全部为淮语范围，长江北岸扬州、泰州、如皋、海安，南岸镇江等地，吴语全部消失殆尽。
+					  至此，吴语江北阵地仅剩靖江和南通的东部。</a></footer>
+					</blockquote>
+				</li>
+			</ul>
+		</div><!-- /stack -->
+		
+	</div><!-- /container -->
+	
+</div><!-- /main -->
+
+<script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
+<script type="text/javascript" src="js/elastiStack.js"></script>
+<script type="text/javascript">
+(function() {
+	var body = document.body,
+		titles = [].slice.call( document.querySelectorAll( '#stack-titles > li' ) ),
+		totalTitles = titles.length,
+		stack = new ElastiStack( document.getElementById( 'elasticstack' ), {
+			onUpdateStack : function( idx ) {
+				classie.remove( titles[idx === 0 ? totalTitles - 1 : idx - 1], 'current' );
+				classie.add( titles[idx], 'current' );
+			}
+		} ),
+		shapeEl = document.getElementById( 'morph-shape' ),
+		s = Snap( shapeEl.querySelector( 'svg' ) ),
+		pathEl = s.select( 'path' ),
+		paths = { 
+			reset : pathEl.attr( 'd' ),
+			next  : shapeEl.getAttribute( 'data-morph-next' )
+		};
+
+	document.getElementById( 'stack-next' ).addEventListener( 'mousedown', nextItem );
+	
+	function nextItem() {
+		classie.add( body, 'animating' );
+		classie.add( body, 'navigate-next' );
+		pathEl.stop().animate( { 'path' : paths.next }, 450, mina.easeinout, function() {
+			classie.remove( body, 'navigate-next' );
+			stack.nextItem( { transform : 'rotate3d(0,0,1,3deg) translate3d(0,-40px,300px)' } );
+			pathEl.stop().animate( { 'path' : paths.reset }, 100, mina.easeout, function() {
+				classie.remove( body, 'animating' );
+			} );
+		} );
+	}
+})();
+</script>
+
+</body>
+</html>

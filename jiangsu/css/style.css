@@ -1,0 +1,48 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+body{font-family:Georgia, serif;color:#fff;font-size:14px;}
+a{color:#ffffcc;text-decoration:none;-webkit-transition:0.5s;-moz-transition:0.5s;-o-transition:0.5s;-ms-transition:0.5s;transition:0.5s;}
+a:hover,a.selected{color:#ffcc00;}
+h1,h2,h4,h5,h6{text-align:center;color:#ccc;text-shadow:#000 1px 1px 2px;margin-bottom:5px;}
+h1{font-size:30px;}
+h2{font-size:26px;}
+
+
+/* timeline */
+#timeline{width:1000px;height:600px;overflow:hidden;margin:40px auto 0 auto;position:relative;background:url('../images/dot.gif') left 45px repeat-x;}
+#dates{width:1000px;height:60px;overflow:hidden;}
+#dates li{float:left;width:100px;height:50px;font-size:20px;text-align:center;background:url('../images/biggerdot.png') center bottom no-repeat;}
+#dates a{line-height:24px;padding-bottom:10px;text-shadow:#000 1px 1px 1px;}
+#dates .selected{font-size:24px;}
+#issues{width:1000px;height:600px;overflow:hidden;}
+#issues li{width:1000px;height:600px;float:left;}
+#issues li img{float:left;margin:10px 30px 10px 50px;}
+#issues li .map{float:left;margin:30px 90px 10px 90px;}
+#issues li .tip{position: absolute;width: 51px;height: 51px;z-index:2000;}
+#issues li .tip2{position: absolute;width: 76px;height: 39px;z-index:2000;}
+#issues li .tip0{position: absolute;width: 48px;height: 24px;z-index:2000;}
+#issues li .tip3{position: absolute;width: 114px;height: 39px;z-index:2000;}
+#issues li .tip4{position: absolute;width: 152px;height: 39px;z-index:2000;}
+#issues li .arrow{position: absolute;width: 73px;height: 100px;z-index:2000;}
+#issues li .arrow1{position: absolute;width: 100px;height: 73px;z-index:2000;}
+#issues li .fire{position: absolute;width: 128px;height: 130px;z-index:2000;}
+#issues li .more{position: absolute;width: 42px;height: 21px;z-index:2000;background:url(../images/more.png);background-size: 100%;border-radius: 2px;cursor: pointer;}
+#issues li h1{color:#ffcc00;font-size:48px;margin:20px 0;text-shadow:#000 1px 1px 2px;}
+#issues li p{font-size:14px;margin-right:50px;font-weight:normal;line-height:22px;text-shadow:#000 1px 1px 2px;}
+#grad_left,#grad_right{width:100px;height:350px;position:absolute;top:0;}
+#grad_left{left:0;}
+#grad_right{right:0;}
+#next,#prev{position:absolute;top:0;font-size:770px;top:300px;width:22px;height:38px;background-position:0 0;background-repeat:no-repeat;text-indent:-9999px;overflow:hidden;}
+#next:hover,#prev:hover{background-position:0 -76px;}
+#next{right:0;background-image:url('../images/next.png');}
+#prev{left:0;background-image:url('../images/prev.png');}
+#next.disabled,#prev.disabled{opacity:0.2;}
+
+@-webkit-keyframes 'chuguoshoudu'
+{
+    from {margin-top:-238px;margin-left: -3px;
+    }
+    to{
+		margin-top:-341px;margin-left: 12px;
+    }
+}

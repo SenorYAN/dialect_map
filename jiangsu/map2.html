@@ -1,0 +1,1442 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSU--GIS1102 江浙沪皖方言地图</title>
+<script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/lib/raphael-min.js"></script>
+<script type="text/javascript" src="js/res/jsMapConfig.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/audio.min.js"></script>
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style11.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" >
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+<script src="js/jquery.timelinr-0.9.3.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function(){
+	audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+
+$().timelinr();
+
+
+
+	//饼图
+$('#jiangsudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '江苏省域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   46.3],
+                {
+                    name: '吴语（苏沪嘉小片）',
+                    y: 19.2,
+                    sliced: true,
+                    selected: true
+                },
+                ['中原官话（徐淮片）',  14.6],
+                ['江淮官话（通泰片)',   11.9],
+				['吴语（毗陵片)',   6.1],
+                ['其他',   3.2]
+            ]
+        }]
+    });
+
+$('#nanjingdialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '南京市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   95.4],
+                {
+                    name: '吴语（毗陵小片）',
+                    y: 4.6,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#wuxidialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '无锡市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                {
+                    name: '吴语（苏沪嘉小片）',
+                    y: 90.5,
+                    sliced: true,
+                    selected: true
+                },
+                ['吴语（毗陵小片）',   9.5]
+            ]
+        }]
+    });
+$('#xuzhoudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '徐州市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   4.5],
+                {
+                    name: '中原官话（徐淮片）',
+                    y: 95.5,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#changzhoudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '常州市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                {
+                    name: '吴语（毗陵片）',
+                    y: 87.9,
+                    sliced: true,
+                    selected: true
+                },
+                ['江淮官话（洪巢片）',   12.1]
+            ]
+        }]
+    });
+$('#suzhoudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '苏州市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                {
+                    name: '吴语（苏沪嘉小片）',
+                    y: 99.8,
+                    sliced: true,
+                    selected: true
+                },
+                ['其他',   0.2]
+            ]
+        }]
+    });
+$('#nantongdialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '南通市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(通泰片)',   43.0],
+                {
+                    name: '吴语（苏沪嘉小片）',
+                    y: 35.4,
+                    sliced: true,
+                    selected: true
+                },
+                ['通东话（吴语毗陵片）',     10.1],
+                ['南通话',   8.2],
+                ['其他',   3.2]
+            ]
+        }]
+    });
+$('#lianyungangdialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '连云港市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   70.1],
+                {
+                    name: '中原官话（徐淮片）',
+                    y: 29.9,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#yanchengdialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '盐城市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   75.2],
+                {
+                    name: '江淮官话（通泰片）',
+                    y: 20.4,
+                    sliced: true,
+                    selected: true
+                },
+                ['吴语（苏沪嘉小片）',   3.2],
+                ['其他',   1.2]
+            ]
+        }]
+    });
+$('#yangzhoudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '扬州市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(通泰片)',   13.0],
+                {
+                    name: '江淮官话(洪巢片)',
+                    y: 87.0,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#huaiandialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '淮安市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   97.2],
+                {
+                    name: '中原官话（徐淮片）',
+                    y: 2.8,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#zhenjiangdialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '镇江市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   74.6],
+                {
+                    name: '吴语（毗陵片）',
+                    y: 25.4,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+$('#taizhoudialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '泰州市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(通泰片)',   86.0],
+                {
+                    name: '吴语（毗陵片）',
+                    y: 13.4,
+                    sliced: true,
+                    selected: true
+                },
+                ['其他',  0.6]
+            ]
+        }]
+    });
+$('#suqiandialect').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: '宿迁市域方言分布'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Share',
+            data: [
+                ['江淮官话(洪巢片)',   70.6],
+                {
+                    name: '中原官话（徐淮片）',
+                    y: 29.4,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }]
+    });
+
+	//音频
+$('#nantonghua').click(function(){
+		$('.audiojs').show(1000);
+ });
+
+$('#nanjinghua').click(function(){
+ 		$('.audiojs').show(1000);
+ });
+
+$('#shanghaihua').click(function(){
+ 		$('.audiojs').show(1000);
+ });
+
+$('#suzhouhua').click(function(){
+ 		$('.audiojs').show(1000);
+ });
+
+$('#xuzhouhua').click(function(){
+ 		$('.audiojs').show(1000);
+ });
+
+$('#jianghuaihua').click(function(){
+ 		$('.audiojs').show(1000);
+ });
+
+
+	//覆盖层处置
+function allhide(){	
+	$('#chunqiu_t1').hide();
+	$('#chunqiu_t2').hide();
+	$('#chunqiu_t3').hide();
+	$('#chunqiu_t4').hide();
+	$('#chunqiu_t5').hide();
+	$('#chunqiu_t6').hide();
+	$('#chunqiu_t7').hide();
+	$('#chunqiu_t8').hide();
+	$('#chunqiu_t9').hide();
+	$('#chunqiu_t10').hide();
+	$('#chunqiu_t11').hide();
+	$('#chunqiu_t12').hide();
+	$('#chunqiu_t13').hide();
+	$('#chunqiu_t14').hide();
+	$('#chunqiu_t15').hide();
+	$('#chunqiu_t16').hide();
+	$('#chunqiu_t17').hide();
+	$('#chunqiu_t18').hide();
+
+	$('#han_t1').hide();
+	$('#han_t2').hide();
+	$('#han_t3').hide();
+	$('#han_t4').hide();
+	$('#han_t5').hide();
+	$('#han_t6').hide();
+	$('#han_t7').hide();
+	$('#han_t8').hide();
+
+	$('#nanbei_t1').hide();
+	$('#nanbei_t2').hide();
+	$('#nanbei_t3').hide();
+	$('#nanbei_t4').hide();
+    $('#nanbei_t5').hide();
+	$('#nanbei_t6').hide();
+	$('#nanbei_t7').hide();
+
+	$('#ming_t1').hide();
+	$('#ming_t2').hide();
+	$('#ming_t3').hide();
+	$('#ming_t4').hide();
+	$('#ming_t5').hide();
+	}
+	//马上执行隐藏
+allhide();
+
+
+
+$('#JsMap').SVGMap({
+		mapName: 'js',
+		stateData: {
+		//南京A
+		"nanjing":{"value":"0.32","index":"1","stateInitColor":"7","note":"<p>南京话主要通行于南京市主城6区、江宁区、浦口区、六合区、句容市的全境，溧水区的北部，滁州市区、来安县、全椒县，马鞍山大部分和芜湖市小部分，使用人数约1600万人,属于江淮官话洪巢片，南部靠近常州少量分布吴语毗陵片。</p>"},
+		//无锡B
+		"wuxi":{"value":"0.85","index":"2","stateInitColor":"1","note":"<p>无锡处于苏州和常州之间，所以无锡方言（城区以及近郊）就兼具了苏州话和常州话的某些特点，内部情况更为复杂。总体为东部靠近苏州为吴语苏沪嘉小片，西部靠近常州为吴语毗陵片。</p>"},
+		//徐州C
+		"xuzhou":{"value":"-0.91","index":"3","stateInitColor":"15","note":"<p>徐州位于江苏北部，历史上为华夏九州之一，所管辖地域也就是现在的苏鲁豫皖交界地区。这种地域的划分，造成了苏鲁豫皖交界地区语言的共通。大体为中原官话徐淮片，东部靠近连云港分布着少量的江淮官话区。</p>"},
+		//常州D
+		"changzhou":{"value":"0.72","index":"4","stateInitColor":"2","note":"<p>常州话(吴语太湖片毗陵小片或称常州小片)， 吴语的一种重要方言，使用人口位居吴语各小片第2位，属于吴语太湖片毗陵小片。作为吴侬软语的一员，发音相较于苏州话更偏硬朗。</p>"},
+		//苏州E
+		"suzhou":{"value":"0.96","index":"5","stateInitColor":"0","note":"<p>苏州话，俗称“苏州闲话”，属吴语苏沪嘉小片。长期以来苏州话一直是吴语的代表方言之一，在历史上具有很高的地位。苏州话以软糯著称，素有“吴侬软语”之美称。</p>"},
+		//南通F
+		"nantong":{"value":"0.58","index":"6","stateInitColor":"4","note":"<p>南通地区，江淮海交汇，原为海中沙洲，接连大陆不足千年，境内方言十分复杂。北部三县是江淮方言通泰片，南部启海地区是吴语苏沪嘉片，而市区及通州区西部为南通话，其他地区则为通东话或其他小片。</p>"},
+		//连云港G
+		"lianyungang":{"value":"0.01","index":"7","stateInitColor":"8","note":"<p>连云港话是连云港当地的方言：主要包括江淮官话、中原官话，人们通常所描述的连云港话，一般指连云港市区方言即江淮方言。属于江淮官话洪巢片的海州小片，主要包括连云港市区，东海县铁道东南部，灌云县，灌南县的北部，宿迁市沭阳县的大部分。</p>"},
+		//淮安H
+		"huaian":{"value":"0.20","index":"8","stateInitColor":"8","note":"<p>淮安位于洪泽湖沿岸，古淮河穿城而过，地处江淮腹地，大部分人口方言属于江淮官话洪巢片，两淮小片。</p>"},
+		//盐城J
+		"yancheng":{"value":"0.21","index":"9","stateInitColor":"7","note":"<p>盐城位于黄海之滨，南北狭长，方言也大不相同，市区及北部区县为江淮官话洪巢片，南部大丰东台则与苏中苏南交往密切，掺杂着江淮官话通泰片和吴语苏沪嘉片。</p>"},
+		//扬州K
+		"yangzhou":{"value":"0.36","index":"10","stateInitColor":"6","note":"<p>扬州话属于官话方言里的江淮官话区，扬州话存在内部差异，以扬州市区（老城区）方言为标准。扬州话是江淮官话的代表方言，以扬州方言为载体的曲艺有扬州清曲、高邮民歌、扬州评话、扬剧、扬州弹词等。</p>"},
+		//镇江L
+		"zhenjiang":{"value":"0.46","index":"11","stateInitColor":"5","note":"<p>镇江位于中国东部沿海、江苏南部，是长江三角洲北翼中心和国家级苏南现代化示范区。自古为黄金水岸、江南渔米之乡、中国富庶之地、兵家必争之地。镇江本市行政区域内有多种方言：主城区操江淮官话、丹徒区和丹阳市操吴语太湖片毗陵小片丹徒话和丹阳话、句容市以南京官话为主并带有镇江话成分、扬中市带有江淮口音和吴语成分。</p>"},
+		//泰州M
+		"taizhou":{"value":"0.40","index":"12","stateInitColor":"6","note":"<p>泰州话，属于江淮官话，学术上一般称之为泰如（泰州－如皋）方言片或通泰（南通－泰州）方言片，泰州话流行于江苏省的海陵、高港、姜堰、泰兴、兴化、海安、如皋、如东（西北部）扬中、东台、大丰等县市，覆盖了泰州、南通、盐城三个地级市。泰州方言圈位于江苏中部核心地区，其地理位置是东面大海，南临长江，北望淮河，西接扬州。</p>"},
+		//宿迁N
+		"suqian":{"value":"-0.04","index":"13","stateInitColor":"11","note":"<p>宿迁方言属于官话方言中的中原官话。该方言属于中原官话中的徐淮片。宿迁话具有中原官话的主要特点，即古入声消失，其中古入声清音声母和次浊声母字今读阴平，古全浊声母字今读阳平。部分地区分尖团，严格区分平翘舌音和前后鼻音。</p>"},
+		//上海
+		"shanghai":{"value":"-0.04","index":"13","stateInitColor":"1","note":"<p>上海话，是一种吴语方言，属于吴语太湖片苏沪嘉小片，上海话又称上海闲话，沪语，是上海本土文化的重要根基。上海话也是吴语的重要代表，与吴语太湖片其他方言基本能互通。狭义上海话指上海市区方言，也就是现在被广泛使用和认同的上海主流通用方言。上海话是以本地吴语为基础，自然融合上海开埠后的吴语区各地移民方言而成的一支新型城市吴语。 </p>"},
+		//杭州
+		"hangzhou":{"value":"-0.04","index":"13","stateInitColor":"2","note":"<p>杭州话是吴语的一种方言，属于吴语杭州小片，具有吴语的一般特征。杭州话因地理位置关系以苕溪小片方言为基础，中古时期受宋代官话影响，近现代则因大量移民受到了临绍小片的冲击。因此杭州话表现在声调接近苕溪小片-余杭话，用词相对于其他吴语更偏向官话，并保留了大量曾在唐宋时期极为发达，却在元代以后没落的儿缀词缀，而白读音词汇则多半来自临绍小片的萧山话和绍兴话。</p>"},
+		//嘉兴
+		"jiaxing":{"value":"-0.04","index":"13","stateInitColor":"2","note":"<p>嘉兴话和苏州话、上海话差别很小，因为唐以前一直属苏州管辖，唐时才设秀州府，脱离苏州；而上海旧属松江府，曾隶属嘉兴辖下，语言以嘉兴话为主。松江府成立后,松江地区方言在嘉兴话的基础上独立发展，形成吴语中发展相对滞后的松江话。之后才形成了今天的上海话。</p>"},
+		//湖州
+		"huzhou":{"value":"-0.04","index":"13","stateInitColor":"2","note":"<p>湖州话是吴语方言，属于吴语苏嘉湖小片。吴语湖州小片包括湖州吴兴区、南浔区、长兴、安吉(以上两县西部边境官话移民区除外)、德清以及以及杭州市部分地区（包括余杭区大部、江干区东部、西湖区北部、拱墅区北部等）。长兴西部部分地区存在吴语-宣州片-太高小片。另外，由于19世纪的太平天国兵燹造成的人口大量减少，长兴、安吉西部部分地区存有非吴语方言，主要是江淮官话-洪巢片、河南、湖北移民官话和闽南语。</p>"},
+		//宁波
+		"ningbo":{"value":"-0.04","index":"13","stateInitColor":"1","note":"<p>宁波话属于吴语太湖片（北吴）甬江小片，分布在宁波市六区、奉化、象山、宁海（岔路及其以南除外）、余姚东南部、慈溪东部，舟山大部分地区等，使用人口约500万。各土语十分接近，内部一致性也很高。 余姚大部和慈溪西部被划分为属于吴语太湖片（北吴）临绍小片。</p>"},
+		//绍兴
+		"shaoxing":{"value":"-0.04","index":"13","stateInitColor":"3","note":"<p>绍兴话是吴语的一种方言，属吴语-太湖片-临绍小片。绍兴话同上海话、湖州话、杭州话、宁波话、苏州话同属北部吴语，彼此间互通度较高，可大致进行交流。</p>"},
+		//台州
+		"taizhou1":{"value":"-0.04","index":"13","stateInitColor":"4","note":"<p>台州话包括临海话，黄岩话，仙居话等，使用人口580万，占吴语人口总数的11.6%，可细分为南台片、北台片。南台包括临海、黄岩、椒江、路桥、温岭、玉环、乐清（清江以北），语音接近北吴的小片，代表为市区话和温岭话；北台包括三门、天台、仙居、宁海（岔路以南），代表为天台话。南北两片通话有些困难，南片的黄岩、椒江、路桥、温岭等比较接近，北片的几个方言则相差较远。</p>"},
+		//金华
+		"jinhua":{"value":"-0.04","index":"13","stateInitColor":"5","note":"<p>金华话是吴语内的一种方言，属吴语-金衢片，使用地区主要为浙江省金华市的婺城区、金东区及部分临近地区（兰溪、义乌、武义、龙游局地）。使用人数约100万。以金华城里方言为代表。金华话很复杂！</p>"},
+		//衢州
+		"quzhou":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>衢州话属吴语—金衢片—婺柯小片，是一种低地吴语。衢州话在历史上受到北方话和浙江官话杭州话的影响颇深，以至于衢州人不能与周围乡间人直接通话，反而能较容易地理解太湖片的一些方言。衢州、兰溪、 金华等地方言的文读系统实际就是浙江官话的地域变体。</p>"},
+		//舟山
+		"zhoushan":{"value":"-0.04","index":"13","stateInitColor":"1","note":"<p>舟山话系吴语甬江话的一个分支。一直以来，舟山与宁波一衣带水，舟楫往来，历年海禁解除，回到舟山的多数都是从宁波过来的。历史上舟山和宁波就是甬江文化圈的。</p>"},
+		//安徽
+		"anhui":{"value":"-0.04","index":"13","stateInitColor":"9","note":"<p>安徽的官话方言主要有中原官话和江淮官话。中原官话主要通用于淮河以北和淮河以南部分市县，江淮官话主要通用于江淮之间和长江以南的部分市县。</p>"},
+		//江西
+		"jiangxi":{"value":"-0.04","index":"13","stateInitColor":"7","note":"<p>江西东北部，零散分布着少许的吴语以及徽语，景德镇地区以及上饶地区为主。</p>"},
+		//宣城
+		"xuancheng":{"value":"-0.04","index":"13","stateInitColor":"5","note":"<p>宣洲（现为宣城市宣州区）位于安徽省东南部，东与郎溪、广德为邻，西与芜湖、南陵毗连，南接宁国、泾县，北与当涂县和江苏省高淳县接壤。 宣城最有影响的主要是两大方言：江淮官话，为北来移植方言；宣州吴语，为本地土著方言。江淮官话现已在全境占支配地位，是现代宣城方言的代表。宣州吴语处在江淮官话的包围之中，正不断受到江淮官话的强烈影响和渗透。</p>"},
+		//郎溪
+		"langxi":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>郎溪县地处安徽省东南部皖、苏、浙三省交界地区。面积1105平方千米，人口34万，县人民政府驻建平镇。所谓郎溪话并非某种单一的方言体系，而是指郎溪地区目前通行的各类汉语方言之总称，包括吴语、淮语、西南官话、中原官话等。皖南宣州地区的土著方言为吴语（包括太湖片与宣州片），其中宣州东部与常州、湖州接壤地区土著吴语属太湖片，郎溪县即属此列。</p>"},
+		//广德
+		"guangde":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>广德县南部和西部（南部如柏垫、杨滩，西部如誓节）说的是湖北话，属于西南官话。县城说的话属于江淮官话洪巢片。北部东部东北部（像邱村、新杭）说的是河南话（光山地区的），属于中原官话。而也有极少数人如甘溪沟、庙西有人说广德本地的话，属于吴语。</p>"},
+		//泾县
+		"jingxian":{"value":"-0.04","index":"13","stateInitColor":"5","note":"<p>泾县话是皖南宣州泾县地区的土著汉语方言，属于吴语宣州片。皖南宣州地区的土著方言为吴语（包括太湖片与宣州片）。</p>"},
+		//旌德
+		"jingde":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>旌德话潭家桥的留东村、中墩村等处土著居民说潭家桥话，属吴语宣州话特殊的一支，与旌德洪川、江村话类似，从历史上来说又称东太平话（或称旌德话）。</p>"},
+		//宁国
+		"ningguo":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>宁国属于方言中的徽语区,但是由于历史上其他地区人因自然灾害的迁移,宁国方言既受到了湖南、江苏等南方方言的影响,又受到北方的方言影响,尤以西南官话影响最甚,形成了独特的徽宁语系。</p>"},
+		//绩溪
+		"jixi":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>绩溪话属于徽语绩歙片绩溪小片，是徽州方言的代表方言之一，使用地域在今绩溪县大部，县城华阳话是绩溪话的代表性方言。绩溪话保留了很多的古音因素，和北方官话差别大，和所有徽州话一样，绩溪话的强迫式的在句子中连读变调的发音特征是另一个与官话的显著差别。</p>"},
+		//黄山
+		"huangshan":{"value":"-0.04","index":"13","stateInitColor":"6","note":"<p>徽语分布于新安江流域的旧徽州府全境、旧严州府大部、江西北部的旧饶州府部分地区，使用人口约436万，旧时徽州话以歙县徽城话为代表音，严州话则以原建德梅城话为代表音。由于行政中心的变迁，屯溪话成为现在徽州话的代表音，新安江话（原新安江镇）成为现在严州话的代表音。</p>"},
+		//南京
+		"jiangning":{"value":"-0.04","index":"13","stateInitColor":"17"},
+		//苏州
+		"pingjiang":{"value":"-0.04","index":"13","stateInitColor":"17"},
+		//扬州
+		"jiangdu":{"value":"-0.04","index":"13","stateInitColor":"17"},
+	    //杭州
+	    "linan":{"value":"-0.04","index":"13","stateInitColor":"17"},
+		//徐州
+		"xuzhoushi":{"value":"-0.04","index":"13","stateInitColor":"17"}
+		},
+		dialect: function(value){
+			return (value<0)?"中原方言":((value>0.7)?"吴语":(value>0.3)?"吴淮混合":"江淮方言");
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        dialecthide:function(){
+			$('#jiangsudialect').hide();
+			$('#nanjingdialect').hide();
+			$('#wuxidialect').hide();
+			$('#xuzhoudialect').hide();
+			$('#changzhoudialect').hide();
+			$('#suzhoudialect').hide();
+			$('#nantongdialect').hide();
+			$('#yanchengdialect').hide();
+			$('#lianyungangdialect').hide();
+			$('#yangzhoudialect').hide();
+			$('#huaiandialect').hide();
+			$('#zhenjiangdialect').hide();
+			$('#taizhoudialect').hide();
+			$('#suqiandialect').hide();
+		},
+		 audiohide:function(){
+			$('#suzhouhua').hide();
+			$('#nantonghua').hide();
+			$('#xuzhouhua').hide();
+			$('#jianghuaihua').hide();
+			$('#shanghaihua').hide();
+			$('#nanjinghua').hide();
+			$('.audiojs').hide();
+		},
+        clickCallback: function(stateData, obj){
+
+           $('#data-in #content').html((stateData)[obj.id].note);
+           this.dialecthide();
+           this.audiohide();
+           $('#'+obj.id+'dialect').show(50);
+           if(obj.id!='nanjing'||obj.id!='xuzhou'||obj.id!='suzhou'||obj.id!='nantong'||obj.id!='yancheng'||obj.id!='huaian'||obj.id!='yangzhou')
+           {$('.audiojs').hide();}
+
+       		$('#cityname').css('background','url(./images/font/'+obj.id+'.png)');
+
+           if(obj.id=='guangde'||obj.id=='jingxian'||obj.id=='jingde'||obj.id=='langxi'||obj.id=='jixi'||obj.id=='ningguo')
+           	{$('.notelist').css('background','url(./images/dummies/xuancheng.jpg)');}
+           else{$('.notelist').css('background','url(./images/dummies/'+obj.id+'.jpg)');}
+
+           if(obj.id=='nantong')
+           	{
+           		$(".audiojs audio").attr("src","mp3/nantong.mp3");
+           		$(".duration").html('01:54');
+           		$('#nantonghua').show(1000);}
+           if(obj.id=='nanjing')
+           	{
+           		$(".audiojs audio").attr("src","mp3/nanjing.mp3");
+           		$(".duration").html('01:55');
+           		$('#nanjinghua').show(1000);}
+           if(obj.id=='suzhou')
+           	{
+           		$(".audiojs audio").attr("src","mp3/haimen.mp3");
+           		$(".duration").html('01:10');
+           		$('#suzhouhua').show(1000);}
+           if(obj.id=='shanghai')
+           	{
+           		$(".audiojs audio").attr("src","mp3/shanghai.mp3");
+           		$(".duration").html('01:25');
+           		$('#shanghaihua').show(1000);}
+           if(obj.id=='xuzhou')
+           	{
+           		$(".audiojs audio").attr("src","mp3/xuzhou.mp3");
+           		$(".duration").html('01:00');
+           		$('#xuzhouhua').show(1000);}
+           if(obj.id=='huaian'||obj.id=='yangzhou'||obj.id=='yancheng')
+           	{
+           		$(".audiojs audio").attr("src","mp3/jianghuai.mp3");
+           		$(".duration").html('01:30');
+           		$('#jianghuaihua').show(1000);}
+    
+       	}
+	})
+
+//春秋
+var chunqiumapObj = {};
+$('#chunqiuMap').SVGMap({
+		mapName: 'chunqiu',
+		stateData: {
+		//徐淮
+		"xuhuaiyi":{"value":"0.32","index":"1","stateInitColor":"9"},
+		//未成陆
+		"weichenglu":{"value":"0.32","index":"2","stateInitColor":"16"},
+		//吴国
+		"wuguo":{"value":"0.32","index":"3","stateInitColor":"1"},
+		//楚国
+		"chuguo":{"value":"0.32","index":"4","stateInitColor":"16"},
+		//越国
+		"yueguo":{"value":"0.32","index":"5","stateInitColor":"1"},
+		//徐楚
+		"xuchu":{"value":"0.32","index":"6","stateInitColor":"16"},
+		//彭城
+		"pengcheng":{"value":"0.32","index":"7","stateInitColor":"17"},
+		//姑苏
+		"gusu":{"value":"0.32","index":"8","stateInitColor":"17"},
+		//会稽
+		"kuaiji":{"value":"0.32","index":"9","stateInitColor":"17"}
+		},
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+       	},
+       	external: chunqiumapObj
+	});
+$('#chunqiu1').click(function(){
+ 		allhide();
+ 		$('#chunqiu_t1').toggle();
+ 		$('#chunqiu_t3').toggle();
+ 		$('#chunqiu_t10').toggle(2000);
+ 		$('#chunqiu_t4').toggle(1000);
+ });
+$('#chunqiu2').click(function(){
+ 		allhide();
+ 		$('#chunqiu_t1').toggle();
+ 		$('#chunqiu_t3').toggle();
+ 		$('#chunqiu_t11').toggle(2000);
+ 		$('#chunqiu_t5').toggle(3000);
+ 		$('#chunqiu_t6').toggle(3000);
+ 		$('#chunqiu_t12').toggle(4000);
+ 		chunqiumapObj.xuhuaiyi.animate({
+                fill: '#613030'
+            },2000);
+ });
+$('#chunqiu3').click(function(){
+ 	allhide();
+ 	$('#chunqiu_t1').toggle();
+ 	$('#chunqiu_t3').toggle();
+ 	$('#chunqiu_t5').toggle();
+ 	$('#chunqiu_t6').toggle();
+ 	chunqiumapObj.xuhuaiyi.animate({
+                fill: '#ff5151'
+            },2000);
+ });
+$('#chunqiu4').click(function(){
+ 	allhide();
+ 	$('#chunqiu_t1').toggle();
+ 	$('#chunqiu_t2').toggle(2000);
+ 		chunqiumapObj.xuchu.animate({
+                fill: '#ff5151'
+            },1000);
+ 	 	chunqiumapObj.xuchu.animate({
+                fill: '#4f9d9d'
+            },1000);
+ 	 	 chunqiumapObj.chuguo.animate({
+                fill: '#4f9d9d'
+           	},1000);
+ });
+$('#chunqiu5').click(function(){
+ 	allhide();
+ 	$('#chunqiu_t1').toggle();
+ 	$('#chunqiu_t13').toggle(1000);
+ 	$('#chunqiu_t14').toggle(1500);
+ 	$('#chunqiu_t15').toggle(2500);
+ 	$('#chunqiu_t16').toggle(2000);
+ 	
+ });
+$('#chunqiu6').click(function(){
+ 	allhide();
+ 	$('#chunqiu_t17').toggle();
+ 	$('#chunqiu_t18').toggle(3000);
+ });
+
+
+//两汉
+var hanmapObj = {};
+$('#hanMap').SVGMap({
+		mapName: 'han',
+		stateData: {
+		"pengchengguo":{"value":"0.32","index":"1","stateInitColor":"15"},
+		"xiapi":{"value":"0.32","index":"2","stateInitColor":"11"},
+		"guangling":{"value":"0.32","index":"3","stateInitColor":"2"},
+		"pei":{"value":"0.32","index":"4","stateInitColor":"15"},
+		"donghai":{"value":"0.32","index":"5","stateInitColor":"10"},
+		"jiujiang":{"value":"0.32","index":"6","stateInitColor":"7"},
+		"lujiang":{"value":"0.32","index":"7","stateInitColor":"8"},
+		"danyang":{"value":"0.32","index":"8","stateInitColor":"2"},
+		"kuaiji":{"value":"0.32","index":"9","stateInitColor":"2"},
+		"wu":{"value":"0.32","index":"10","stateInitColor":"1"},
+		"yuzhang":{"value":"0.32","index":"11","stateInitColor":"9"},
+		"weichenglu":{"value":"0.32","index":"12","stateInitColor":"16"},
+		"molin":{"value":"0.32","index":"12","stateInitColor":"17"},
+		"wuxian":{"value":"0.32","index":"12","stateInitColor":"17"},
+		"kuaijicheng":{"value":"0.32","index":"12","stateInitColor":"17"},
+		"guanglingcheng":{"value":"0.32","index":"12","stateInitColor":"17"},
+		"pengcheng":{"value":"0.32","index":"12","stateInitColor":"17"}
+		},
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+           
+       	},
+       	external: hanmapObj
+});
+
+$('#han1').click(function(){
+ 		allhide();
+ 		$('#han_t1').toggle(1000);
+ 		$('#han_t2').toggle(1000);
+ });
+$('#han2').click(function(){
+ 		allhide();
+ 		$('#han_t3').toggle(1000);
+ 		$('#han_t4').toggle(3000);
+ 		$('#han_t6').toggle(2000);
+ 		hanmapObj.xiapi.animate({
+              fill: '#c4e1e1'
+        },3000);
+ });
+$('#han3').click(function(){
+ 		allhide();
+ 		$('#han_t5').toggle(1000);
+ 		$('#han_t7').toggle(1000);
+ 		$('#han_t8').toggle(3000);
+ 		hanmapObj.guangling.animate({
+              fill: '#E3170D'
+        },3000);
+        hanmapObj.danyang.animate({
+              fill: '#E3170D'
+        },3000);
+        hanmapObj.wu.animate({
+              fill: '#E3170D'
+        },3000);
+        hanmapObj.kuaiji.animate({
+              fill: '#E3170D'
+        },3000);
+ });
+
+//南北朝
+var nanbeimapObj = {};
+$('#nanbeichaoMap').SVGMap({
+		mapName: 'nanbeichao',
+		stateData: {
+		beichao:{"value":"0.32","index":"1","stateInitColor":"15"},
+		nanyanzhou:{"value":"0.32","index":"1","stateInitColor":"2"},
+		beiyanzhou:{"value":"0.32","index":"1","stateInitColor":"6"},
+		jizhou:{"value":"0.32","index":"1","stateInitColor":"11"},
+		beixuzhou:{"value":"0.32","index":"1","stateInitColor":"9"},
+		yuzhou:{"value":"0.32","index":"1","stateInitColor":"8"},
+		nanyuzhou:{"value":"0.32","index":"1","stateInitColor":"6"},
+		nanxuzhou:{"value":"0.32","index":"1","stateInitColor":"2"},
+		yangzhou:{"value":"0.32","index":"1","stateInitColor":"1"},
+		yangzhou1:{"value":"0.32","index":"1","stateInitColor":"1"},
+		weichenglu:{"value":"0.32","index":"1","stateInitColor":"16"},
+		jiangzhou:{"value":"0.32","index":"1","stateInitColor":"8"},
+		molin:{"value":"0.32","index":"1","stateInitColor":"17"},
+		wuxian:{"value":"0.32","index":"1","stateInitColor":"17"},
+		kuaijicheng:{"value":"0.32","index":"1","stateInitColor":"17"},
+		pengcheng:{"value":"0.32","index":"1","stateInitColor":"17"},
+		guanglingcheng:{"value":"0.32","index":"1","stateInitColor":"17"},
+		jiankangdiqu:{"value":"0.32","index":"1","stateInitColor":"1"},
+		zhenjiang:{"value":"0.32","index":"1","stateInitColor":"17"}
+		},
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+           
+       	},
+       	external:nanbeimapObj
+	});
+
+$('#nanbei1').click(function(){
+ 		allhide();
+ 		$('#nanbei_t1').toggle(1000);
+ 		$('#nanbei_t2').toggle(2000);
+ 		$('#nanbei_t5').toggle(3000);
+ 		$('#nanbei_t6').toggle(3000);
+ 		nanbeimapObj.nanyuzhou.animate({
+        fill: '#c4e1e1'
+        },5000);
+        nanbeimapObj.beiyanzhou.animate({
+        fill: '#613030'
+        },5000);
+ });
+$('#nanbei2').click(function(){
+ 		allhide();
+ 		$('#nanbei_t3').toggle(1000);
+ 		$('#nanbei_t4').toggle(1000);
+ 		nanbeimapObj.nanyanzhou.animate({
+        fill: '#c4e1e1'
+        },3000);
+        nanbeimapObj.nanxuzhou.animate({
+              fill: '#fff4c1'
+        },5000);
+        nanbeimapObj.jiankangdiqu.animate({
+              fill: '#fff4c1'
+        },7000);
+ });
+$('#nanbei3').click(function(){
+ 		allhide();
+ 		$('#nanbei_t7').toggle();
+ 		$('#nanbei_t3').toggle();
+        nanbeimapObj.nanxuzhou.animate({
+              fill: '#c4e1e1'
+        },3000);
+        nanbeimapObj.jiankangdiqu.animate({
+              fill: '#c4e1e1'
+        },3000);
+ });
+
+//宋
+$('#beisongMap').SVGMap({
+		mapName: 'beisong',
+		stateData: {
+			huainandonglu:{"value":"0.32","index":"1","stateInitColor":"7"},
+			huainanxilu:{"value":"0.32","index":"1","stateInitColor":"9"},
+			jingdongdonglu:{"value":"0.32","index":"1","stateInitColor":"13"},
+			jingdongxilu:{"value":"0.32","index":"1","stateInitColor":"15"},
+			jiangnandonglu:{"value":"0.32","index":"1","stateInitColor":"4"},
+			liangzhelu:{"value":"0.32","index":"1","stateInitColor":"1"},
+			weichenglu:{"value":"0.32","index":"1","stateInitColor":"16"},
+			jiangning:{"value":"0.32","index":"1","stateInitColor":"17"},
+			pingjiang:{"value":"0.32","index":"1","stateInitColor":"17"},
+			linan:{"value":"0.32","index":"1","stateInitColor":"17"},
+			jiangdu:{"value":"0.32","index":"1","stateInitColor":"17"},
+			xuzhou:{"value":"0.32","index":"1","stateInitColor":"17"}
+			},
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+           
+       	}
+	});
+
+$('#nansongMap').SVGMap({
+		mapName: 'nansong',
+		stateData: {
+			huainandonglu:{"value":"0.32","index":"1","stateInitColor":"7"},
+			huainanxilu:{"value":"0.32","index":"1","stateInitColor":"9"},
+			shandongdonglu:{"value":"0.32","index":"1","stateInitColor":"11"},
+			shandongxilu:{"value":"0.32","index":"1","stateInitColor":"13"},
+			nanjinglu:{"value":"0.32","index":"1","stateInitColor":"15"},
+			jiangnandonglu:{"value":"0.32","index":"1","stateInitColor":"4"},
+			liangzhexilu:{"value":"0.32","index":"1","stateInitColor":"1"},
+			liangzhedonglu:{"value":"0.32","index":"1","stateInitColor":"2"},
+			weichenglu:{"value":"0.32","index":"1","stateInitColor":"16"},
+			jiangning:{"value":"0.32","index":"1","stateInitColor":"17"},
+			pingjiang:{"value":"0.32","index":"1","stateInitColor":"17"},
+			linan:{"value":"0.32","index":"1","stateInitColor":"17"},
+			jiangdu:{"value":"0.32","index":"1","stateInitColor":"17"},
+			xuzhou:{"value":"0.32","index":"1","stateInitColor":"17"}
+		},
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+           
+       	}
+	});
+
+//明清
+var mingmapObj = {};
+$('#mingMap').SVGMap({
+		mapName: 'ming',
+		stateData: {
+		xuzhou:{"value":"0.32","index":"1","stateInitColor":"15"},
+		huaianfu:{"value":"0.32","index":"1","stateInitColor":"13"},
+		yangzhoufu:{"value":"0.32","index":"1","stateInitColor":"7"},
+		fengyangfu:{"value":"0.32","index":"1","stateInitColor":"10"},
+		luzhoufu:{"value":"0.32","index":"1","stateInitColor":"9"},
+		chuzhou:{"value":"0.32","index":"1","stateInitColor":"9"},
+		hezhou:{"value":"0.32","index":"1","stateInitColor":"9"},
+		yingtianfu:{"value":"0.32","index":"1","stateInitColor":"10"},
+		zhenjiangfu:{"value":"0.32","index":"1","stateInitColor":"8"},
+		changzhoufu:{"value":"0.32","index":"1","stateInitColor":"3"},
+		suzhoufu:{"value":"0.32","index":"1","stateInitColor":"1"},
+		songjiangfu:{"value":"0.32","index":"1","stateInitColor":"2"},
+		guangdezhou:{"value":"0.32","index":"1","stateInitColor":"8"},
+		taipingfu:{"value":"0.32","index":"1","stateInitColor":"8"},
+		ningguofu:{"value":"0.32","index":"1","stateInitColor":"8"},
+		chizhoufu:{"value":"0.32","index":"1","stateInitColor":"8"},
+		huizhoufu:{"value":"0.32","index":"1","stateInitColor":"9"},
+		anqingfu:{"value":"0.32","index":"1","stateInitColor":"9"},
+		hangzhoufu:{"value":"0.32","index":"1","stateInitColor":"3"},
+		jiaxingfu:{"value":"0.32","index":"1","stateInitColor":"2"},
+		huzhou:{"value":"0.32","index":"1","stateInitColor":"2"},
+		shaoxingfu:{"value":"0.32","index":"1","stateInitColor":"3"},
+		yanzhoufu:{"value":"0.32","index":"1","stateInitColor":"5"},
+		ningbofu:{"value":"0.32","index":"1","stateInitColor":"2"},
+		jinhuafu:{"value":"0.32","index":"1","stateInitColor":"5"},
+		taizhou:{"value":"0.32","index":"1","stateInitColor":"6"},
+		quzhoufu:{"value":"0.32","index":"1","stateInitColor":"6"},
+		jiangxi:{"value":"0.32","index":"1","stateInitColor":"7"},
+		weichenglu:{"value":"0.32","index":"1","stateInitColor":"16"},
+		jiangning:{"value":"0.32","index":"1","stateInitColor":"17"},
+		pingjiang:{"value":"0.32","index":"1","stateInitColor":"17"},
+		linan:{"value":"0.32","index":"1","stateInitColor":"17"},
+		jiangdu:{"value":"0.32","index":"1","stateInitColor":"17"},
+		xuzhoushi:{"value":"0.32","index":"1","stateInitColor":"17"}
+		},		
+		dialect: function(value){
+			//return (value==0)?"淮语":"吴语";
+		},
+		stateTipHtml: function(stateData, obj){
+            return  obj.name;
+        },
+        clickCallback: function(stateData, obj){
+           
+       	},
+       	external:mingmapObj
+	});
+
+$('#ming1').click(function(){
+ 		allhide();
+ 		$('#ming_t1').toggle(2000);
+ 		$('#ming_t2').toggle(1000);
+ });
+
+$('#ming3').click(function(){
+ 		allhide();
+ 		$('#ming_t2').toggle(1000);
+ 		$('#ming_t3').toggle(2000);
+ 		$('#ming_t4').toggle(2000);
+ 		$('#ming_t5').toggle(1000);
+ 		mingmapObj.yingtianfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.zhenjiangfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.guangdezhou.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.taipingfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.ningguofu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.chizhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.huizhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.huzhou.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.jiaxingfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.songjiangfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.changzhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.suzhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.songjiangfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.hangzhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.shaoxingfu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.ningbofu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.jinhuafu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.quzhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.taizhou.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.yanzhoufu.animate({
+            fill: '#808a87'
+        },3000);
+        mingmapObj.jiangxi.animate({
+            fill: '#808a87'
+        },3000);
+
+ });
+});
+
+</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="notelist">
+			<div id="jiangsudialect" class="dialect"></div>
+			<div id="nanjingdialect" class="dialect" style="display:none"></div>
+			<div id="wuxidialect" class="dialect" style="display:none"></div>
+			<div id="xuzhoudialect" class="dialect" style="display:none"></div>
+			<div id="changzhoudialect" class="dialect" style="display:none"></div>
+			<div id="suzhoudialect" class="dialect" style="display:none"></div>
+			<div id="nantongdialect" class="dialect" style="display:none"></div>
+			<div id="lianyungangdialect" class="dialect" style="display:none"></div>
+			<div id="yanchengdialect" class="dialect" style="display:none"></div>
+			<div id="yangzhoudialect" class="dialect" style="display:none"></div>
+			<div id="huaiandialect" class="dialect" style="display:none"></div>
+			<div id="zhenjiangdialect" class="dialect" style="display:none"></div>
+			<div id="taizhoudialect" class="dialect" style="display:none"></div>
+			<div id="suqiandialect" class="dialect" style="display:none"></div>
+		</div>
+	    <div class="items" id="Item01">
+	        <div id="title"></div>
+	        <a href="javascript:;" class="fold"></a>
+            <div class="itemCon">
+	           <div id="JsMap" style="margin: 30px 0px 0px 750px;background:white;border-radius:4px;"></div>
+	        </div>
+        </div>
+		<div class="datalist">
+			<div id="data-in">
+				<div id="cityname"></div>
+				<div id="content">					
+					<p>江苏地跨长江、淮河，地域文化和方言都有明显差别。江苏省分为三个方言区，即江淮方言区、吴方言区、北方方言区。 </p><br>
+					<p>江淮官话区又分洪巢片、通泰片。</p><br>
+					<p>吴语区同属太湖片，细分苏沪嘉小片、.毗陵小片。</p><br>
+					<p>中原官话区又分徐州片、赣榆片。</p>
+				</div>
+			</div>
+		<audio src="mp3/nantong.mp3" preload="auto"  /></div>
+		<button id="shijianzhou" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span id="trigger-overlay2" class="ui-button-text">时间轴</span>
+		</button>
+		<button id="nantonghua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span class="ui-button-text">听听南通话</span>
+		</button>
+		<button id="suzhouhua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span  class="ui-button-text">听听苏州话</span>
+		</button>
+		<button id="shanghaihua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span  class="ui-button-text">听听上海话</span>
+		</button>
+		<button id="nanjinghua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span class="ui-button-text">听听南京话</span>
+		</button>
+		<button id="xuzhouhua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span class="ui-button-text">听听徐州话</span>
+		</button>
+		<button id="jianghuaihua" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+			<span class="ui-button-text">听听江淮话</span>
+		</button>
+	</div>
+
+	<!-- open/close -->
+	<div id="overlay2" class="overlay overlay-simplegenie">
+		<button id="btn2" type="button" class="overlay-close">Close</button>
+	<div id="timeline">
+	<ul id="dates">
+		<li><a href="#">商周</a></li>
+		<li><a href="#">两汉</a></li>
+		<li><a href="#">南北朝</a></li>
+		<li><a href="#">宋</a></li>
+		<li><a href="#">明清</a></li>
+	</ul>
+	<ul id="issues">
+		<li id="#1900">
+			<div class="map" style=" width:256px; height:500px;" >
+				<div id="chunqiuMap" style="margin: 0px -250px"></div>
+				<div id="chunqiu_t1" class="tip"  style="margin-top:-320px;margin-left: 110px;background: url('./images/font/wu_m.png');background-size: 100%;"></div>
+				<div id="chunqiu_t2" class="tip"  style="margin-top:-238px;margin-left: -3px;background: url('./images/font/chu_m.png');background-size: 100%;"></div>
+				<div id="chunqiu_t3" class="tip"  style="margin-top:-190px;margin-left: 126px;background: url('./images/font/yue_m.png');background-size: 100%;"></div>
+				<div id="chunqiu_t4" class="tip3"  style="margin-top:-529px;margin-left: -104px;background: url('./images/font/huaxiazu_s.png');background-size: 100%;"></div>
+				<div id="chunqiu_t5" class="tip2"  style="margin-top:-485px;margin-left: -66px;background: url('./images/font/xuyi_s.png');background-size: 100%;"></div>
+				<div id="chunqiu_t6" class="tip2"  style="margin-top:-404px;margin-left: 51px;background: url('./images/font/huaiyi_s.png');background-size: 100%;"></div>
+				<div id="chunqiu_t7" class="tip0"  style="margin-top:-437px;margin-left: 2px;background: url('./images/font/pengcheng_s.png');background-size: 100%;"></div>
+				<div id="chunqiu_t8" class="tip0"  style="margin-top:-180px;margin-left: 191px;background: url('./images/font/kuaiji_S.png');background-size: 100%;"></div>
+				<div id="chunqiu_t9" class="tip0"  style="margin-top:-272px;margin-left: 141px;background: url('./images/font/gusu_s.png');background-size: 100%;"></div>
+				<div id="chunqiu_t10" class="arrow"  style="margin-top:-500px;margin-left: 2px;background: url('./images/black_arrow_1.png');background-size:100%;"></div>
+				<div id="chunqiu_t11" class="tip4"  style="margin-top:-530px;margin-left: -109px;background: url('./images/font/zhougong.png');background-size:100%;"></div>
+				<div id="chunqiu_t12" style="position: absolute;z-index:2000; width:50px; height:267px; margin-top:-524px;margin-left: 49px;background: url('./images/zhougongdongzheng.png');background-size:100%;-webkit-transform: rotate(-20deg);"></div>
+				<div id="chunqiu_t13" class="tip2" style="margin-top:-535px;margin-left: 73px;background: url('./images/font/luqi.png');background-size:100%;"></div>
+				<div id="chunqiu_t14" style="position: absolute;z-index:2000; width:39px; height:118px; margin-top:-544px;margin-left: -52px;background: url('./images/font/zhengweijin.png');background-size:100%;"></div>
+				<div id="chunqiu_t15" class="arrow"  style="margin-top:-493px;margin-left: -12px;background: url('./images/red_arrow.png');background-size:100%;-webkit-transform: rotate(-20deg);"></div>
+				<div id="chunqiu_t16" class="arrow"  style="margin-top:-500px;margin-left: 62px;background: url('./images/red_arrow_2.png');background-size:100%;"></div>
+				<div id="chunqiu_t17" style=" position: absolute;width: 51px;height: 51px;z-index:2000;background: url('./images/font/chu_m.png');background-size: 100%;
+				    -webkit-animation-name: 'chuguoshoudu';
+				    -webkit-animation-duration: 5s;
+				    -webkit-animation-iteration-count:10;"></div>
+				<div id="chunqiu_t18" style="position: absolute;z-index:2000; margin-top:-372px;margin-left: 8px; height:39px; width:118px; background: url('./images/font/shouchun.png');background-size: 100%;"></div>
+				</div>
+			<h1>商周</h1>
+			<p> 1、从商周两代开始，黄河流域的华夏族向东南方发展，现今江苏方言的分布是在这种历史条件下，经过长期演变形成的。此时江苏东部仍然有大片未成陆地区(左图白色区)。<span id="chunqiu1" class="more"></span></p>
+			<p>2、周初周公旦曾率军东征，战胜东夷，但是南面今江苏安徽境内的徐夷、淮夷仍很顽犟，曾多次与周互有攻伐，战争使敌对双方进行了语言文化的交流。<span id="chunqiu2" class="more"></span></p>
+			<p>3、到春秋时期，徐夷、淮夷才被吴国征服，今江苏全境几为吴国所有。这时吴国与中原诸国关系密切，与蛮夷各族共同接受华夏文化。<span id="chunqiu3" class="more"></span></p>
+			<p>4、东周以来楚国向东扩张，吴楚连年战争，虽然楚国失败，但是由中原入楚的先进文化反倒因战争更多更快的传入吴越，加速其华夏化的进程。<span id="chunqiu4" class="more"></span></p>
+			<p>5、这时吴国与中原内地的往来也颇为频繁，公子季札访问鲁、齐、郑、卫、晋诸国，表现了很高的华夏语言文化修养。<span id="chunqiu5" class="more"></span></p>
+			<p>6、战国时期，楚国中心逐步东移，最后都城迁到寿春（今安徽寿县〕，楚语对东部地区特别是江淮地区语言的影响更大了。<span id="chunqiu6" class="more"></span></p>
+		</li>
+		<li id="#1930">
+			<div class="map" style=" width:256px; height:500px;" >
+				<div id="hanMap" style="margin: 0px -200px"></div>
+				<div id="han_t1" class="tip"  style="margin-top:-290px;margin-left: 110px;background: url('./images/font/wu_m.png');background-size: 100%;"></div>
+				<div id="han_t2" class="tip"  style="margin-top:-329px;margin-left: 26px;background: url('./images/font/huai_m.png');background-size: 100%;"></div>
+				<div id="han_t3" class="tip"  style="margin-top:-318px;margin-left: 26px;background: url('./images/font/ying.png');background-size: 100%;"></div>
+				<div id="han_t4" class="tip4"  style="margin-top:-367px;margin-left: 163px;background: url('./images/font/jiangbeidiqu.png');background-size: 100%;"></div>
+				<div id="han_t5" class="tip4"  style="margin-top:-347px;margin-left: 163px;background: url('./images/font/xiajiangdiqu.png');background-size: 100%;"></div>
+				<div id="han_t6" class="arrow"  style="width:112px;height:87px; margin-top:-395px;margin-left: 55px;background: url('./images/yingdongyi.png');background-size: 100%;"></div>
+				<div id="han_t7" class="tip4"  style="margin-top:-228px;margin-left: 100px;background: url('./images/font/jiangdongdiqu.png');background-size: 100%;"></div>
+				<div id="han_t8" class="tip3"  style="width:153px; height:51px; margin-top:-284px;margin-left: 100px;background: url('./images/font/wufangyan.png');background-size: 100%;"></div>
+			</div>
+			<h1>两汉</h1>
+			<p>1、江淮方言情况可以通过西汉扬雄《方言》的记载来了解。上文说过，当时省境偏西部西接淮河南北为江淮方言区，其他是吴方言区。<span id="han1" class="more"></span></p>
+			<p>2、《方言》记载词汇的流行区域，总是江淮并举，其中多次与楚国中心地区的郢相联系。表明楚是一个大方言区，并且随着势力向东扩张，楚语也向东发展，此后逐步扩大到长江下游以北地区，吴方言区则多吴越并举，吴扬并举。吴是包括江北的。<span id="han2" class="more"></span></p>
+			<p>3、扬州地域广大，与江淮荆楚陈青徐都有并举，可见当时在下江江东广大地区已形成一种大体相近的华夏语方言区，即后来的吴方言。<span id="han3" class="more"></span></p>
+		</li>
+		<li id="#1944">
+			<div class="map" style=" width:256px; height:500px;" >
+				<div id="nanbeichaoMap" style="margin: 0px -200px"></div>
+				<div id="nanbei_t1" class="tip4"  style="margin-top:-520px;margin-left: -63px;background: url('./images/font/zhongyuanshimin_s.png');background-size: 100%;"></div>
+				<div id="nanbei_t2" style="position: absolute;z-index:2000; width:40px; height:200px; margin-top:-491px;margin-left: 49px;background: url('./images/zhougongdongzheng.png');background-size:100%;-webkit-transform: rotate(-20deg);"></div>
+				<div id="nanbei_t3" class="tip2"  style="margin-top:-289px;margin-left: 73px;background: url('./images/font/jiankang_s.png');background-size: 100%;"></div>
+				<div id="nanbei_t4" class="tip2"  style="margin-top:-298px;margin-left: 149px;background: url('./images/font/zhenjiang.png');background-size: 100%;"></div>
+				<div id="nanbei_t5" class="tip4"  style="margin-top:-391px;margin-left: 58px;background: url('./images/font/jianghuaidiqu.png');background-size: 100%;"></div>
+				<div id="nanbei_t6" class="tip4"  style="margin-top:-245px;margin-left: 83px;background: url('./images/font/jiangnandiqu.png');background-size: 100%;"></div>
+				<div id="nanbei_t7" class="tip"  style="margin-top:-334px;margin-left: 90px;background: url('./images/chengshi.png');background-size: 100%;"></div>
+			</div>
+			<h1>南北朝</h1>
+			<p>1、全国处于分裂状态，战争频仍，加之北方游牧民族南侵，中原士民为避乱纷纷南迁，江淮和江南地区受到中原汉语的冲击，尤以长江两岸为重，江淮间是主要战场，作为战争手段，军事家往往采取迁民或屯垦的措施。<span id="nanbei1" class="more"></span></p>
+			<p>2、江南镇江以上则是南来难民的主要停留地区。聚居甚众。所有这些情况都是最能引起语言变化的因素。自此以后，江淮之间逐步演变为江淮方言，甚至扩大到建康镇江一带。<span id="nanbei2" class="more"></span></p>
+			<p>3、四世纪初，东晋政权在建康建立，北方大批南逃的人渡江集结于建康，并进而成为都城的主人。这些从以旧都洛阳为中心南来的人带来洛阳话，他们在政治和文化方面居于主导地位，这种外来语逐步成为建康的官话，士民在公共场合须说洛阳话。本来建康的本地话是吴方言，自从中原来的洛阳话入主以后，经过长期的融合，建康土语逐步被吸收，到南北朝时已基本演变为中原通语。
+			<span id="nanbei3" class="more"></span></p>
+		</li>
+		<li id="#1950">
+			<h1  style="margin: 0px"  >宋</h1>
+			<div class="map" style=" width:256px; height:500px; margin: 0px 30px 10px 30px" >
+				<div id="beisongMap" style="margin: 0px -130px"></div>
+			</div>
+			<div class="map" style=" width:256px; height:500px; margin: 0px 30px 10px 30px" >
+				<div id="nansongMap" style="margin: 0px 80px"></div>
+			</div>
+		</li>
+		<li id="#1971">
+			<div class="map" style=" width:256px; height:500px;" >
+				<div id="mingMap" style="margin: 0px -200px"></div>
+				<div id="ming_t1" class="tip2"  style="margin-top:-289px;margin-left: 73px;background: url('./images/font/yingtian_s.png');background-size: 100%;"></div>
+				<div id="ming_t2" class="tip"  style="margin-top:-334px;margin-left: 90px;background: url('./images/chengshi.png');background-size: 100%;"></div>
+				<div id="ming_t3" class="tip4"  style="margin-top:-261px;margin-left: 106px;background: url('./images/font/xiwudiqu.png');background-size: 100%;"></div>
+				<div id="ming_t4" class="tip4"  style="margin-top:-171px;margin-left: 61px;background: url('./images/font/taipingtianguo.png');background-size: 100%;"></div>
+				<div id="ming_t5" class="tip2"  style="margin-top:-289px;margin-left: 73px;background: url('./images/font/tianjing.png');background-size: 100%;"></div>
+			</div>
+			<h1>明清</h1>
+			<p>1、明代初期建都南京，南京又成为帝王都邑，全国的政治经济文化中心，是当时全世界最大的城市，南京话也就因之取得官话的地位，江淮官话也就是全国性的通语。此外，南京在地理上和语言系统上都接近中原话，比观《洪武正韵》和《中原音韵》的异同可知，中原汉语自古为全国通语，这是南京话可以作为全国通语的重要条件。这时的中原话和北京话都已失去四声中的入声调。<span id="ming1" class="more"></span></p>
+			<p>2、四声是汉语的重要特征，北方官话大区的再分区就是以入声调的分派为分水岭的。方言缺少一个声调，传统上被认为是个缺陷，不宜作为正统的民族共同语，只能算是一种方言。据研究，他们认为当时南京话就是官话。利玛窦和金尼阁都在南京学过汉语，直到清末鸦片战争前后，传教士还认为南京话是汉语的代表。虽然明清以来，北京是政治经济文化中心，官话的语音以北京话为标准，成为普通话的前身。但是，就汉语的传统和历史地理的地位而言，南京话始终有其重要地位。<span id="ming2" class="more"></span></p>
+			<p>3、明朝末年，吴语人口占全国20%，白话小说《豆棚闲话》真实记录当时吴语口语。清末民初，出现大批苏白小说，知名有《海上花列传》《九尾龟》，还有顾颉刚《吴歌甲集》等数种民歌集。清末太平天国爆发，对江南造成严重影响，太平天国烧杀抢掠罄竹难书，导致江南十室九空，吴地经济基础、劳动资源遭受前所未有打击，吴语人口锐减。西吴局部出现真空状态，流民问题导致其淮化 。<span id="ming3" class="more"></span></p>
+		</li>
+	</ul>
+
+	<div id="grad_right"></div>
+	<a href="#" id="next">+</a>
+	<a href="#" id="prev">-</a>
+</div>
+	</div>
+
+	<script src="js/classie.js"></script>
+	<script src="js/demo1.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-3d.js"></script>
+	<script src="js/modules/exporting.js"></script>
+
+</body>
+</html>
